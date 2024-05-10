@@ -4,21 +4,18 @@
 }
 
 /* agregando tipo de fuente */
+/* aplicando grid al contenedor principal */
 
 body {
     font-family: "Poppins", sans-serif;
-}
-
-/* aplicando grid al contenedor principal */
-
-.grid-container {
     display: grid;
     grid-template-areas:
         "header header"
         "aside main"
         "footer footer"
     ;
-    grid-template-columns: 160px auto;
+    grid-template-columns: 1fr 9fr;
+    grid-template-rows: 1fr 14fr 1fr;
     height: 100vh;
 }
 
@@ -28,10 +25,13 @@ header {
     grid-area: header;
     text-align: center;
     background-color: rgb(19, 63, 123);
-    padding: 18px;
     color: white;
-    max-height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
 
 /* css del Aside */
 
@@ -63,15 +63,16 @@ aside a:hover {
 
 main {
     grid-area: main;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 1fr 1fr;
     background-color: silver;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 70px;
 }
 
 .card {
-    width: 250px;
-    height: 380px;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,20 +82,17 @@ main {
 }
 
 .card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+  width: 100%;
+  object-fit: cover;
 }
 
-
 .card-title {
-    margin-top: 5px;
-    padding: 10px 0;
-    font-size: 1.3em;
+    padding: 10px 0 5px 0;
+    font-size: 1.1em;
 }
 
 .card-price {
-    margin: 15px 0px 0px 0px;
+    margin-bottom: 5px;
 }
 
 .card-button {
@@ -102,7 +100,6 @@ main {
     text-align: center;
     width: 100%;
     padding: 8px 0;
-    margin-top: 23px;
     background-color: rgb(19, 63, 123);
     color: white;
 }
@@ -111,14 +108,19 @@ main {
     opacity: 0.7;
 }
 
+
 /* css del footer */
 
 footer {
     grid-area: footer;
+    display: grid;
     text-align: center;
     background-color: rgb(19, 63, 123);
     color: white;
-    padding: 18px;
-    max-height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
 
